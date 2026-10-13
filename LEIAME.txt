@@ -1,0 +1,24 @@
+TESTE DE PERFIL COMPORTAMENTAL — KIT DE FRONT-END
+==================================================
+O visual está pronto. O BACKEND (PHP) é responsabilidade do aluno.
+
+Como rodar: copie a pasta para o htdocs (XAMPP) / www (Laragon) e abra
+http://localhost/teste-comportamental/
+
+Arquivos:
+  index.php        início + campo do nome         (TODO: erro e envio do nome)
+  teste.php        perguntas (só 1 de exemplo)    (TODO: foreach, validação)
+  resultado.php    resultado com dados de exemplo (TODO: cálculo, empate, %)
+  dados/perguntas.php  array vazio                (TODO: as 24 perguntas)
+  css/estilo.css   estilos prontos
+
+Classes CSS úteis:
+  Cores por perfil: aguia, gato, lobo, tubarao (aplique no elemento)
+  .alerta                      caixa de erro
+  .pergunta.sem-resposta       cartão da pergunta não respondida
+  .destaque (+ perfil/.empate) cartão do resultado
+  .placar .trilho span         barra (defina width em % via style)
+
+Regras: os comentários TODO dizem onde o PHP entra.
+O JavaScript de teste.php só atualiza a barra de progresso; a pontuação
+e a classificação devem ser calculadas no PHP.

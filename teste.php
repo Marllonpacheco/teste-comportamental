@@ -17,7 +17,14 @@
 require_once __DIR__ . '/dados/perguntas.php';
 
 // Recebe o nome enviado pela página inicial.
+/* Recebe o nome enviado pela página inicial. */
 $nome = trim($_POST['nome'] ?? '');
+
+// Se o nome estiver vazio, retorna à página inicial.
+if ($nome === '') {
+    header('Location: index.php?erro=nome');
+    exit;
+}
 
 // Permite exibir avisos quando o teste for reaberto
 // após uma validação feita no resultado.php.
@@ -91,8 +98,12 @@ $respostasAnteriores = $_POST['respostas'] ?? [];
         <?php foreach ($perguntas as $indice => $pergunta): ?>
 
             <?php
-            $respostaAtual = $respostasAnteriores[$indice] ?? '';
-            $semResposta = $erroRespostas && $respostaAtual === '';
+                $respostaAtual = $respostasAnteriores[$indice] ?? '';
+                $semResposta = $erroRespostas && $respostaAtual === '';
+
+            // Embaralha as alternativas desta pergunta.
+                $alternativasEmbaralhadas = $pergunta['alternativas'];
+                shuffle($alternativasEmbaralhadas);
             ?>
 
             <fieldset
@@ -111,7 +122,7 @@ $respostasAnteriores = $_POST['respostas'] ?? [];
                     ) ?>
                 </h2>
 
-                <?php foreach ($pergunta['alternativas'] as $letra => $alternativa): ?>
+                <?php foreach ($alternativasEmbaralhadas as $letra => $alternativa): ?>
 
                     <label class="opcao">
                         <input
@@ -127,12 +138,12 @@ $respostasAnteriores = $_POST['respostas'] ?? [];
                         >
 
                         <span>
-                            <?= $letra ?>)
-                            <?= htmlspecialchars(
-                                $alternativa['texto'],
-                                ENT_QUOTES,
-                                'UTF-8'
-                            ) ?>
+                        <?= chr(65 + array_search($letra, array_keys($alternativasEmbaralhadas), true)) ?>)
+                        <?= htmlspecialchars(
+                            $alternativa['texto'],
+                            ENT_QUOTES,
+                            'UTF-8'
+                        ) ?>
                         </span>
                     </label>
 

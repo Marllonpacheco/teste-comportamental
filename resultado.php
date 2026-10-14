@@ -26,17 +26,17 @@ $perfis = [
     'gato' => [
         'nome' => 'Gato',
         'caracteristica' => 'Comunicativo / Relacional',
-        'descricao' => 'Valoriza a comunicação, os relacionamentos e a interação com outras pessoas.'
+        'descricao' => 'Expressivo, sociável, energizado por pessoas, colaboração e relacionamentos.'
     ],
     'lobo' => [
         'nome' => 'Lobo',
         'caracteristica' => 'Organizado / Planejador',
-        'descricao' => 'Valoriza o planejamento, a organização, os processos e a atenção aos detalhes.'
+        'descricao' => 'Analítico, metódico, detalhista, cuidadoso com processos, regras, organização e informações.'
     ],
     'tubarao' => [
         'nome' => 'Tubarão',
         'caracteristica' => 'Executor / Prático',
-        'descricao' => 'Valoriza a ação, a praticidade, a execução das tarefas e a busca por resultados.'
+        'descricao' => 'Determinado, direto, orientado a metas, decisões e resultados rápidos.'
     ]
 ];
 

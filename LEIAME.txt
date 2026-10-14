@@ -22,3 +22,95 @@ Classes CSS úteis:
 Regras: os comentários TODO dizem onde o PHP entra.
 O JavaScript de teste.php só atualiza a barra de progresso; a pontuação
 e a classificação devem ser calculadas no PHP.
+==================================================
+==================================================
+# Teste Comportamental — Águia, Gato, Lobo e Tubarão
+
+## 1. Sobre o projeto
+
+Este projeto foi desenvolvido como trabalho prático da disciplina de PHP. O sistema permite que o participante responda a um teste comportamental com 24 perguntas e descubra qual perfil predomina em suas respostas.
+
+O sistema trabalha com quatro perfis:
+
+- **Águia — Sonhador / Inovador:** criatividade, inovação e visão de possibilidades.
+- **Gato — Comunicativo / Relacional:** comunicação, colaboração e relacionamentos.
+- **Lobo — Organizado / Planejador:** planejamento, organização e atenção aos detalhes.
+- **Tubarão — Executor / Prático:** ação, decisões e foco em resultados.
+
+## 2. Tecnologias utilizadas
+
+- PHP — processamento das respostas, validações e cálculo dos resultados.
+- HTML5 — estrutura das páginas.
+- CSS3 — estilização e adaptação da interface.
+- JavaScript — atualização visual da barra de progresso das perguntas.
+
+O projeto não necessita de banco de dados.
+
+## 3. Estrutura do projeto
+
+```text
+teste-comportamental/
+├── index.php
+├── teste.php
+├── resultado.php
+├── css/
+│   └── estilo.css
+├── dados/
+│   └── perguntas.php
+└── LEIAME.txt
+```
+
+## 4. Como executar o projeto
+
+1. Instale e inicie o XAMPP.
+2. Copie a pasta do projeto para o diretório `htdocs`.
+3. Inicie o serviço Apache no painel do XAMPP.
+4. Abra o navegador e acesse:
+
+   `http://localhost/teste-comportamental/`
+
+5. Informe o nome do participante.
+6. Responda às 24 perguntas.
+7. Clique em **Ver meu resultado** para visualizar a classificação.
+
+## 5. Funcionamento do sistema
+
+1. **Página inicial (`index.php`):** apresenta o teste e recebe o nome do participante.
+2. **Perguntas (`teste.php`):** carrega as perguntas do arquivo de dados e permite selecionar uma alternativa por pergunta.
+3. **Dados (`dados/perguntas.php`):** armazena as perguntas, alternativas e os perfis correspondentes.
+4. **Resultado (`resultado.php`):** valida as respostas, calcula as pontuações, identifica o perfil predominante e apresenta os percentuais.
+
+## 6. Regra de pontuação
+
+Cada pergunta possui quatro alternativas, cada uma associada a um perfil. A alternativa selecionada acrescenta um ponto ao perfil correspondente.
+
+Ao final, o sistema soma os pontos dos quatro perfis e identifica a maior pontuação.
+
+O percentual de cada perfil é calculado pela fórmula:
+
+`(pontuação do perfil / total de perguntas) × 100`
+
+Quando dois ou mais perfis alcançam a maior pontuação, o sistema apresenta um resultado combinado, sem escolher arbitrariamente um vencedor.
+
+## 7. Validações implementadas
+
+- Impede o início do teste sem informar o nome.
+- Verifica se todas as perguntas foram respondidas.
+- Valida se as respostas correspondem a alternativas permitidas.
+- Processa a classificação no PHP, no servidor.
+
+## 8. Funcionalidades
+
+- Teste com 24 perguntas.
+- Barra de progresso das respostas.
+- Cálculo automático da pontuação.
+- Identificação de perfil predominante.
+- Tratamento de empates.
+- Exibição de pontuações e percentuais.
+- Descrição dos perfis predominantes.
+- Opção para realizar o teste novamente.
+- Opção para imprimir o resultado.
+
+## 9. Observação
+
+Este projeto possui finalidade acadêmica e utiliza uma classificação comportamental simplificada para fins didáticos. O resultado não constitui diagnóstico psicológico nem avaliação profissional.

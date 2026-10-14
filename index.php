@@ -25,17 +25,19 @@
   <h1 class="titulo-pagina">Qual animal é o seu perfil?</h1>
   <p>São 24 perguntas rápidas com quatro alternativas cada. Escolha a que mais combina com você. No final, você descobre seu perfil predominante.</p>
 
-  <section class="painel">
-    <!-- TODO (aluno): exiba este bloco SOMENTE quando houver erro de validação -->
-    <div class="alerta" role="alert">
-      <strong>Informe seu nome para começar.</strong>
-      (mensagem de exemplo — troque por uma variável PHP)
-    </div>
+
+
+    <?php if (isset($_GET['erro']) && $_GET['erro'] === 'nome'): ?>
+        <div class="alerta" role="alert">
+            <strong>Informe seu nome para começar.</strong>
+        </div>
+    <?php endif; ?>
+
 
     <!-- TODO (aluno): definir method e o tratamento dos dados enviados -->
     <form action="teste.php" method="post">
       <label class="campo" for="nome">Seu nome</label>
-      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="name">
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
       <button class="btn" type="submit">Começar o teste</button>
     </form>
 

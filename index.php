@@ -5,6 +5,7 @@
    - Ler a mensagem de erro (ex.: nome vazio) e exibi-la dentro do bloco .alerta
    - Decidir como o nome chega ao teste.php (POST, GET ou $_SESSION)
    ========================================================== */
+require 'verificar_login.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
